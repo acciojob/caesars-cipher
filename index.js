@@ -1,21 +1,25 @@
-// This file is not to be modified. Please ignore this.
-// We will understand all of this later in the course.
-// DO NOT MODIFY THIS FILE
+const lookup = {
+  'A': 'N','B': 'O','C': 'P','D': 'Q',
+  'E': 'R','F': 'S','G': 'T','H': 'U',
+  'I': 'V','J': 'W','K': 'X','L': 'Y',
+  'M': 'Z','N': 'A','O': 'B','P': 'C',
+  'Q': 'D','R': 'E','S': 'F','T': 'G',
+  'U': 'H','V': 'I','W': 'J','X': 'K',
+  'Y': 'L','Z': 'M'
+};
 
-const express = require('express');
-const path = require('path');
+function rot13(encodedStr){
+  const codeArr = encodedStr.split("");  // String to Array
+  let decodedArr = []; // Your Result goes here
+  // Only change code below this line
+  // your code here
+  // Only change code above this line
+  return decodedArr.join(""); // Array to String
+}
 
-const app = express();
+// You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
 
-app.use(express.static(__dirname))
+// console.log(rot13("SERR YBIR? NPPVBWBO"));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/main.html'));
-});
-//your code here
-app.post('/add', (req, res) => {
-  const {a,b} = req.body;
-  res.status(200).send(a+b);
-  // res.sendFile(path.join(__dirname + '/main.html'));
-});
-module.exports = app;
+module.exports = rot13;
+
